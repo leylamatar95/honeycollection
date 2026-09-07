@@ -15,6 +15,7 @@ export function CatalogClient({ initialType }: { initialType?: string }) {
 function CatalogContent({ initialType }: { initialType?: string }) {
   const searchParams = useSearchParams();
   const [products, setProducts] = useState<StoreProduct[]>([]),
+    [loading, setLoading] = useState(true),
     [query, setQuery] = useState(''),
     [category, setCategory] = useState('Tümü'),
     [type, setType] = useState(initialType || 'Tümü'),
@@ -22,11 +23,15 @@ function CatalogContent({ initialType }: { initialType?: string }) {
     [favorites, setFavorites] = useState<(string | number)[]>([]);
   useEffect(() => {
     fetch('/api/products')
-      .then((r) => r.json())
-      .then((d) => {
-        if (d.items?.length) setProducts(d.items.map(recordToProduct));
+      .then((r) => {
+        if (!r.ok) throw new Error('Ürünler alınamadı');
+        return r.json();
       })
-      .catch(() => {});
+      .then((d) => {
+        setProducts(Array.isArray(d.items) ? d.items.map(recordToProduct) : []);
+      })
+      .catch(() => setProducts([]))
+      .finally(() => setLoading(false));
   }, []);
   useEffect(() => {
     setCategory(searchParams.get('category') || 'Tümü');
@@ -110,7 +115,12 @@ function CatalogContent({ initialType }: { initialType?: string }) {
             </article>
           ))}
         </div>
-        {!items.length && (
+        {loading && (
+          <div className="no-results" role="status" aria-live="polite">
+            Ürünler yükleniyor…
+          </div>
+        )}
+        {!loading && !items.length && (
           <div className="no-results">
             Seçiminize uygun ürün bulunamadı.
             <button onClick={clear}>Filtreleri temizle</button>

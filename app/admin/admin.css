@@ -2001,3 +2001,47 @@
   .contract-actions { grid-template-columns: 1fr; }
   .contract-actions .status { grid-column: 1; }
 }
+
+/* Compact, consistent mobile controls that stay inside their cards. */
+@media (max-width: 720px) {
+  .admin-main > header { gap: 8px; }
+  .admin-tools { gap: 7px; margin-left: auto; }
+  .admin-tools > button,
+  .admin-menu { width: 40px; height: 40px; min-height: 40px; flex: 0 0 40px; }
+  .primary,
+  .outline,
+  .danger-button,
+  .delete-button,
+  .edit-button,
+  .feature-button,
+  .revoke-user,
+  .category-actions button,
+  .category-edit button,
+  .admin-actions button {
+    min-height: 42px;
+    padding: 9px 12px;
+    font-size: 13px !important;
+    white-space: normal;
+    text-align: center;
+  }
+  .segmented { width: 100%; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; overflow-x: auto; }
+  .segmented button { min-width: 92px; padding: 8px 10px; font-size: 13px; }
+  .product-list-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .product-list-actions small { grid-column: 1 / -1; }
+  .product-list-actions .feature-button { grid-column: 1 / -1; }
+  .product-list-actions button { width: 100%; }
+  .category-actions,
+  .category-edit,
+  .admin-actions { flex-wrap: wrap; gap: 8px; }
+  .category-actions button,
+  .category-edit button,
+  .admin-actions button { flex: 1 1 110px; }
+}
+@media (max-width: 390px) {
+  .admin-main h1 { max-width: 150px; font-size: 19px; }
+  .admin-main > header { padding-inline: 10px; }
+  .admin-menu { margin-right: 7px; }
+  .product-list-actions { grid-template-columns: 1fr; }
+  .product-list-actions .feature-button,
+  .product-list-actions small { grid-column: 1; }
+}

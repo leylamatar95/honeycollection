@@ -1229,11 +1229,13 @@
     backdrop-filter: blur(18px);
   }
   .store-header.overlay {
-    position: sticky;
-    width: auto;
-    background: rgba(255, 255, 255, 0.97);
-    color: var(--store-ink);
-    border-bottom: 1px solid rgba(18, 17, 15, 0.1);
+    position: absolute;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(13, 12, 10, .68), rgba(13, 12, 10, 0));
+    color: #fff;
+    border-bottom: 0;
+    box-shadow: none;
+    backdrop-filter: none;
   }
   .store-logo {
     width: 88px;
@@ -1249,6 +1251,11 @@
     border: 1px solid rgba(18, 17, 15, 0.16) !important;
     border-radius: 50%;
     background: #fff !important;
+  }
+  .store-header.overlay .store-menu {
+    color: #fff;
+    border-color: rgba(255,255,255,.55) !important;
+    background: rgba(18,17,15,.22) !important;
   }
   .book-link {
     display: none;
@@ -1290,15 +1297,16 @@
     width: 100%;
     margin: 0 0 28px;
     gap: 0;
-    text-align: left;
+    text-align: center;
   }
   .mobile-store-menu nav > a,
   .mobile-store-menu nav > button {
     width: 100%;
-    min-height: 58px;
-    justify-content: space-between;
+    min-height: 50px;
+    justify-content: center;
+    gap: 8px;
     border-bottom: 1px solid rgba(18,17,15,.12);
-    font-size: clamp(24px, 7vw, 34px);
+    font-size: clamp(18px, 5vw, 22px);
   }
   .mobile-store-menu nav > a {
     display: flex;
@@ -1306,13 +1314,14 @@
   }
   .mobile-submenu {
     max-height: none;
-    padding: 12px 0 18px 18px;
+    padding: 10px 0 16px;
     border-bottom: 1px solid rgba(18,17,15,.12);
   }
   .mobile-submenu a {
     min-height: 34px;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 14px !important;
     color: #5d554c;
   }
@@ -1529,3 +1538,27 @@ body.mobile-menu-open { overflow: hidden; }
 @media(max-width:420px){.availability-card .rental-calendar{--cell-size:35px;width:min(100%,286px)}}
 .contract-success p{font-size:16px;line-height:1.7;color:#5f5850;max-width:520px;margin:10px auto 24px}.contract-success span{display:block;color:#756d64;font-size:13px}
 @media(max-width:700px){.product-detail{grid-template-columns:1fr}.product-description{padding:28px 0 4px}.product-copy{padding-top:12px}.availability-card{padding:18px 12px}}
+
+/* Keep every availability date centered inside the same circular surface. */
+.availability-card .rental-calendar [data-day] {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  margin: auto;
+  border: 1px solid transparent !important;
+  border-radius: 50% !important;
+  background: #f5f1ea;
+  box-shadow: none !important;
+}
+.availability-card .rental-calendar [data-day]:hover:not(:disabled) { background: #eae3d7; }
+.availability-card .rental-calendar [data-selected='true'],
+.availability-card .rental-calendar .calendar-occupied { background: transparent !important; }
+.availability-card .rental-calendar .calendar-occupied { text-decoration: none; }
+.availability-card .rental-calendar .calendar-occupied [data-day] {
+  color: #fff !important;
+  background: #b65349 !important;
+  border-color: rgba(255,255,255,.92) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 1px #b65349 !important;
+  text-decoration: line-through;
+}
