@@ -3640,6 +3640,7 @@ function CmsSection({
   const fields: any = {
     branding: [
       ['logo', 'Logo', 'image'],
+      ['favicon', 'Site ikonu (kare PNG, JPG veya SVG)', 'image'],
       ['siteName', 'Site adı'],
     ],
     hero: [

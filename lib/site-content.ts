@@ -1,7 +1,11 @@
 export type CustomerGalleryItem = { url: string; alt: string };
 
 export const defaultSiteContent = {
-  branding: { logo: '/logo.png', siteName: 'Honey Collection' },
+  branding: {
+    logo: '/logo.png',
+    favicon: '/favicon.svg',
+    siteName: 'Honey Collection',
+  },
   hero: {
     image: '/hero-honey-collection.webp',
     eyebrow: 'YENİ SEZON · 2026',
