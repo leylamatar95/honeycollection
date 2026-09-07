@@ -38,7 +38,7 @@ Bu proje hem Vercel'de hem de Node.js desteği açık Güzel Hosting Linux paket
 
 1. Pakette Node.js desteğinin açık olduğundan ve Node.js 20.9 veya daha yeni bir sürüm seçilebildiğinden emin olun.
 2. Projeyi Git ile ya da arşiv halinde uygulama dizinine yükleyin; uygulama dizini `public_html` olmak zorunda değildir.
-3. Panelde uygulama kökü olarak proje klasörünü, başlangıç dosyası olarak `server.cjs` dosyasını seçin. Kurulum komutu `npm ci`, derleme komutu `npm run build`, başlatma komutu destekleniyorsa `npm run start:hosting` olmalıdır.
+3. Panelde uygulama kökü olarak proje klasörünü, başlangıç dosyası olarak `server.cjs` dosyasını seçin. Kurulum komutu `npm ci`, derleme komutu `npm run build:hosting`, başlatma komutu destekleniyorsa `npm run start:hosting` olmalıdır. Vercel ise standart `npm run build` komutunu kullanır.
 4. `.env.example` içindeki değerleri panelin ortam değişkenleri bölümüne ekleyin ve uygulamayı yeniden başlatın.
 5. Paneldeki Cron Jobs bölümünden `/api/cron/reminders` adresine 15 dakikada bir `Authorization: Bearer CRON_SECRET` başlığıyla GET veya POST isteği gönderin. Panel özel başlık ekleyemiyorsa bu çağrı için bir harici cron hizmeti kullanın.
 

@@ -1,9 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  // Vercel reads the Next.js build directly. Other Node.js hosts can deploy the
-  // self-contained output without copying the full dependency tree.
-  output: 'standalone',
+  // Vercel packages Next.js itself. Standalone output is only needed by
+  // traditional Node.js hosts such as cPanel/DirectAdmin.
+  ...(process.env.VERCEL ? {} : { output: 'standalone' as const }),
   poweredByHeader: false,
   reactStrictMode: true,
 };
