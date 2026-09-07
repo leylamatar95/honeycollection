@@ -26,9 +26,9 @@ function useMenuCategories() {
           if (active) setCategories(data.items || []);
         })
         .catch(() => {});
-    refresh();
+    void refresh();
     const onVisible = () => {
-      if (document.visibilityState === 'visible') refresh();
+      if (document.visibilityState === 'visible') void refresh();
     };
     window.addEventListener('focus', refresh);
     document.addEventListener('visibilitychange', onVisible);
@@ -52,6 +52,10 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
     addEventListener('scroll', update);
     return () => removeEventListener('scroll', update);
   }, []);
+  useEffect(() => {
+    document.body.classList.toggle('mobile-menu-open', menu);
+    return () => document.body.classList.remove('mobile-menu-open');
+  }, [menu]);
   const categoryLink = (name: string) =>
     `/koleksiyonlar?category=${encodeURIComponent(name)}`;
   return (
@@ -112,6 +116,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
           className="store-menu"
           onClick={() => setMenu(true)}
           aria-label="Menüyü aç"
+          aria-expanded={menu}
         >
           <Menu />
         </button>
@@ -126,7 +131,10 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
             <Link href="/koleksiyonlar" onClick={() => setMenu(false)}>
               Tüm Ürünler
             </Link>
-            <button onClick={() => setMobileCollections(!mobileCollections)}>
+            <button
+              onClick={() => setMobileCollections(!mobileCollections)}
+              aria-expanded={mobileCollections}
+            >
               Koleksiyonlar <ChevronDown />
             </button>
             {mobileCollections && (
