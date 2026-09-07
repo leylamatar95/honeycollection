@@ -1,0 +1,14 @@
+alter table public.products add column if not exists category text;
+alter table public.products add column if not exists color text;
+alter table public.products add column if not exists style text;
+alter table public.products add column if not exists event text;
+alter table public.products add column if not exists fabric text;
+alter table public.products add column if not exists sleeve text;
+alter table public.products add column if not exists neck text;
+alter table public.products add column if not exists fit text;
+alter table public.products add column if not exists lining text;
+alter table public.products add column if not exists care_instructions text;
+alter table public.products add column if not exists rental_terms text;
+alter table public.products add column if not exists image_url text;
+alter table public.products add column if not exists gallery text[] default '{}';
+create index if not exists products_public_catalog_idx on public.products(status,updated_at desc) where deleted_at is null;

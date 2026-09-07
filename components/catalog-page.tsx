@@ -1,0 +1,2 @@
+import {SiteHeader,SiteFooter,PageHero} from './site-shell';import {CatalogClient} from './catalog-client';
+export function CatalogPage({title='Tüm Koleksiyonlar',type}:{title?:string,type?:string}){return <><SiteHeader/><PageHero eyebrow="HONEY COLLECTION" title={title} text="Her stile, her davete ve her bedene eşlik eden seçkin abiye tasarımlarını keşfedin."/><CatalogClient initialType={type}/><SiteFooter/></>}

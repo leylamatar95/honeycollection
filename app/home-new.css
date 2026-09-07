@@ -1,0 +1,595 @@
+.new-home {
+  background: #fbfaf7;
+  color: #25211e;
+}
+.fashion-hero {
+  height: 100vh;
+  min-height: 680px;
+  position: relative;
+  color: white;
+}
+.fashion-hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+.fashion-hero > div {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #211916b8, transparent 68%),
+    linear-gradient(0deg, #0007, transparent 45%);
+}
+.fashion-hero article {
+  position: absolute;
+  left: 8vw;
+  top: 50%;
+  transform: translateY(-42%);
+  max-width: 800px;
+}
+.fashion-hero article > p,
+.home-services header p,
+.home-products header p,
+.atelier-home p,
+.appointment-home > p,
+.instagram-home header p,
+.quote-home > p,
+.store-home > div > p:first-child,
+.newsletter-home p {
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  color: #d9bd78;
+  font-weight: 700;
+}
+.fashion-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(60px, 7vw, 110px);
+  font-weight: 400;
+  line-height: 0.86;
+  margin: 20px 0 28px;
+}
+.fashion-hero h1 em {
+  color: #e1c680;
+  font-weight: 400;
+}
+.fashion-hero article > span {
+  font-size: 13px;
+}
+.fashion-hero nav {
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+}
+.fashion-hero nav a,
+.appointment-home > a {
+  height: 50px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 9px;
+  border: 1px solid #fff;
+}
+.fashion-hero nav a:first-child,
+.appointment-home > a {
+  background: #d3b56e;
+  color: #211c16;
+  border: 0;
+}
+.fashion-hero svg,
+.home-services svg,
+.home-products svg,
+.atelier-home svg,
+.appointment-home svg,
+.store-home svg {
+  width: 15px;
+}
+.home-services,
+.home-products,
+.instagram-home,
+.quote-home,
+.store-home,
+.newsletter-home {
+  padding: 110px 7vw;
+}
+.home-services header,
+.home-products > header,
+.instagram-home > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.home-services h2,
+.home-products h2,
+.instagram-home h2,
+.atelier-home h2,
+.appointment-home h2,
+.store-home h2,
+.newsletter-home h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(45px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 0.95;
+  margin: 10px 0;
+}
+.home-services > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.home-services > div.is-loading{display:block}
+.home-category-placeholder{min-height:180px;display:grid;place-items:center;border:1px dashed #d8d0c7;color:#817970;font-size:14px}
+.home-services article {
+  height: 590px;
+  position: relative;
+  overflow: hidden;
+}
+.home-services article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.category-image-empty{width:100%;height:100%;background:linear-gradient(135deg,#eee9e1,#e2dbd2)}
+.instagram-loading{grid-column:1/-1;min-height:120px;display:grid;place-items:center;color:#817970;font-size:14px}
+.home-services article:after {
+  content: '';
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, #1c1714e8);
+}
+.home-services article > div {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  right: 25px;
+  bottom: 30px;
+  color: white;
+}
+.home-services h3 {
+  font-family: var(--font-serif);
+  font-size: 35px;
+  margin: 0;
+}
+.home-services article p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #ddd5cd;
+}
+.home-services a,
+.home-products header a,
+.atelier-home a,
+.store-home a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+.home-products {
+  background: #f0ebe5;
+}
+.home-products > header > a {
+  border-bottom: 1px solid;
+  padding-bottom: 6px;
+}
+.home-products > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.home-products article img {
+  height: 500px;
+  object-fit: cover;
+}
+.home-products article > p {
+  font-size: 7px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b837a;
+}
+.home-products h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  margin: 5px 0;
+}
+.home-products article > span,
+.home-products article > small {
+  display: block;
+  font-size: 8px;
+  margin-top: 5px;
+  color: #6f6860;
+}
+.collection-banners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.collection-banners a {
+  height: 480px;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+.collection-banners img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.72);
+  transition: 0.5s;
+}
+.collection-banners a:hover img {
+  transform: scale(1.025);
+}
+.collection-banners span {
+  position: absolute;
+  inset: auto 35px 35px;
+  display: flex;
+  flex-direction: column;
+}
+.collection-banners b {
+  font-family: var(--font-serif);
+  font-size: 43px;
+  font-weight: 400;
+}
+.collection-banners small {
+  font-size: 10px;
+}
+.atelier-home {
+  background: #28231f;
+  color: #eee8df;
+  padding: 110px 9vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+}
+.atelier-home h2 em {
+  color: #d8b86e;
+  font-weight: 400;
+}
+.atelier-home ol {
+  list-style: none;
+  padding: 0;
+}
+.atelier-home li {
+  border-top: 1px solid #ffffff2b;
+  padding: 25px 0;
+  display: flex;
+  gap: 30px;
+}
+.atelier-home li b {
+  color: #c6a55b;
+  font-family: var(--font-serif);
+}
+.atelier-home li span {
+  font-family: var(--font-serif);
+  font-size: 25px;
+}
+.appointment-home {
+  text-align: center;
+  background: #e8d7d0;
+  padding: 110px 20px;
+}
+.appointment-home > p {
+  color: #95712f;
+}
+.appointment-home > span {
+  display: block;
+  color: #6f665e;
+  font-size: 12px;
+}
+.appointment-home > a {
+  width: max-content;
+  margin: 30px auto 0;
+}
+.instagram-home > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+.instagram-home a {
+  height: 280px;
+  overflow: hidden;
+}
+.instagram-home img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.quote-home {
+  text-align: center;
+  background: #fff;
+}
+.quote-home > p {
+  color: #9d7934;
+}
+.quote-home blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.2;
+  max-width: 900px;
+  margin: 30px auto;
+}
+.quote-home > span {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: #9c7937;
+}
+.store-home {
+  background: #f0ebe5;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 12vw;
+}
+.store-home > div > p {
+  font-size: 10px;
+  line-height: 2;
+  color: #6f6861;
+}
+.store-home > div > p svg {
+  width: 15px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.store-home aside {
+  background: #26221e;
+  color: white;
+  padding: 55px;
+  align-self: center;
+}
+.store-home aside > svg {
+  color: #d2b165;
+}
+.store-home aside h3 {
+  font-family: var(--font-serif);
+  font-size: 33px;
+}
+.store-home aside p {
+  font-size: 10px;
+  color: #bbb3aa;
+}
+.store-home aside a {
+  border: 1px solid #d2b165;
+  color: #dfc47f;
+  padding: 13px;
+  width: max-content;
+  margin-top: 25px;
+}
+.newsletter-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.newsletter-home p {
+  color: #9b7735;
+}
+.newsletter-home h2 {
+  font-size: 45px;
+  max-width: 600px;
+}
+.newsletter-home form {
+  width: 340px;
+  border-bottom: 1px solid;
+  display: flex;
+}
+.newsletter-home input {
+  border: 0;
+  background: none;
+  padding: 14px 3px;
+  flex: 1;
+  outline: 0;
+}
+.newsletter-home button {
+  border: 0;
+  background: none;
+}
+.newsletter-home svg {
+  width: 17px;
+}
+.story-page {
+  padding: 110px 9vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10vw;
+  background: #fbfaf7;
+}
+.story-page > div:first-child p {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #a98246;
+}
+.story-page h2 {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+.story-page > div:last-child {
+  font-size: 13px;
+  line-height: 2;
+  color: #6f6860;
+}
+.faq-page {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 20px 110px;
+}
+.faq-page details {
+  border-bottom: 1px solid #ddd6cd;
+  padding: 25px 0;
+}
+.faq-page summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  cursor: pointer;
+}
+.faq-page summary svg {
+  width: 17px;
+}
+.faq-page details p {
+  color: #776f67;
+  font-size: 12px;
+  line-height: 1.8;
+}
+@media (max-width: 700px) {
+  .fashion-hero article {
+    left: 22px;
+    right: 22px;
+    top: auto;
+    bottom: 65px;
+    transform: none;
+  }
+  .fashion-hero h1 {
+    font-size: 50px;
+  }
+  .fashion-hero nav {
+    flex-direction: column;
+  }
+  .home-services,
+  .home-products,
+  .instagram-home,
+  .quote-home,
+  .store-home,
+  .newsletter-home {
+    padding: 75px 20px;
+  }
+  .home-services header,
+  .home-products > header,
+  .instagram-home > header {
+    display: block;
+  }
+  .home-services > div,
+  .home-products > div {
+    grid-template-columns: 1fr;
+  }
+  .home-services article {
+    height: 520px;
+  }
+  .home-products article img {
+    height: 500px;
+  }
+  .collection-banners {
+    grid-template-columns: 1fr;
+  }
+  .collection-banners a {
+    height: 380px;
+  }
+  .atelier-home,
+  .store-home,
+  .story-page {
+    grid-template-columns: 1fr;
+    padding: 75px 25px;
+  }
+  .instagram-home > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .instagram-home a {
+    height: 230px;
+  }
+  .instagram-home a:last-child {
+    display: none;
+  }
+  .newsletter-home {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .newsletter-home form {
+    width: 100%;
+  }
+}
+
+.fashion-hero > img {
+  object-position: center center;
+}
+@media (max-width: 700px) {
+  .fashion-hero > img {
+    object-position: 62% center;
+  }
+}
+
+.instagram-home > header {
+  gap: 28px;
+}
+.instagram-home header .instagram-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 10px;
+  width: auto;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 17px;
+  border: 1px solid #b58a2f;
+  background: transparent;
+  color: #171512;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: visible;
+  transition: 0.25s;
+}
+.instagram-home header .instagram-button:hover {
+  background: #171512;
+  border-color: #171512;
+  color: #fff;
+}
+.instagram-button svg {
+  width: 16px;
+}
+@media (max-width: 700px) {
+  .instagram-home header .instagram-button {
+    width: max-content;
+    height: 40px;
+    margin-top: 20px;
+    align-self: flex-start;
+  }
+  .instagram-home > header {
+    margin-bottom: 28px;
+  }
+}
+
+.new-home {
+  background: #fff;
+  color: #151412;
+}
+.home-products,
+.store-home {
+  background: #eee8dc;
+}
+.home-empty-placeholder {
+  grid-column: 1/-1;
+  min-height: 80px;
+  display: grid;
+  place-items: center;
+  color: #8b837a;
+  font-size: 11px !important;
+}
+.collection-banners.is-empty {
+  display: none;
+}
+.appointment-home {
+  background: #f3efe7;
+}
+.atelier-home {
+  background: #11110f;
+}
+.quote-home,
+.newsletter-home,
+.instagram-home,
+.home-services {
+  background: #fff;
+}

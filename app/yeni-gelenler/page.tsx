@@ -1,0 +1,1 @@
+import {SiteHeader,SiteFooter,PageHero} from '@/components/site-shell';import {CatalogClient} from '@/components/catalog-client';export default function Page(){return <><SiteHeader/><PageHero eyebrow="2026 SEZONU" title="Yeni Gelenler" text="Atölyemize ve mağazamıza yeni katılan seçkin tasarımlar."/><CatalogClient/><SiteFooter/></>}

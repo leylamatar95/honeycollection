@@ -1,0 +1,1 @@
+import{t as e}from"./rsc-BGlu2y1C.js";var t=e(()=>{throw Error(`Unexpectedly client reference export 'CatalogClient' is called on server`)},`b8a74466b3b9`,`CatalogClient`);export{t};
