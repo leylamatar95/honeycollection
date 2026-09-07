@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { fallbackCategories, fallbackProducts } from '@/lib/catalog-fallback';
 type ShowcaseItem = {
   id: string;
   show?: boolean;
@@ -12,11 +11,10 @@ export async function GET(request: Request) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL,
     key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key)
-    return NextResponse.json({
-      items: fallbackProducts,
-      categories: fallbackCategories,
-      source: 'fallback',
-    });
+    return NextResponse.json(
+      { items: [], categories: [], error: 'Supabase bağlantısı yapılandırılmamış.' },
+      { status: 503 },
+    );
   const sb = createClient(url, key, { auth: { persistSession: false } }),
     slug = new URL(request.url).searchParams.get('slug');
   let q = sb
@@ -27,15 +25,11 @@ export async function GET(request: Request) {
     .order('updated_at', { ascending: false });
   if (slug) q = q.eq('slug', slug);
   const { data, error } = await q;
-  if (error) {
-    return NextResponse.json({
-      items: slug
-        ? fallbackProducts.filter((product) => product.slug === slug)
-        : fallbackProducts,
-      categories: fallbackCategories,
-      source: 'fallback',
-    });
-  }
+  if (error)
+    return NextResponse.json(
+      { items: [], categories: [], error: error.message },
+      { status: 500 },
+    );
   if (slug) {
     return NextResponse.json(
       { items: data || [] },
