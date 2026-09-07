@@ -38,3 +38,11 @@ next-env.d.ts
 /work/
 /.site-scaffold/
 /WhatsApp Image *.jpeg
+
+# generated staging files
+_site-package-stage-*
+._site-package-stage-*
+
+# generated staging files
+_site-package-stage-*
+._site-package-stage-*
